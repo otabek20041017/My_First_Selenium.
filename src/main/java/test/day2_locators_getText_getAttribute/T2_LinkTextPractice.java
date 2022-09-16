@@ -19,10 +19,11 @@ public class T2_LinkTextPractice {
         //2- Go to: https://practice.cydeo.com
         driver.get("https://practice.cydeo.com");
 
-        //3- Click to A/B Testing from top of the list.
         Thread.sleep(3000);
+        //3- Click to A/B Testing from top of the list.
         //driver.findElement(By.linkText("A/B Testing")).click();
-        WebElement abTestLink = driver.findElement(By.linkText("A/B Testing"));
+        //WebElement abTestLink = driver.findElement(By.linkText("A/B Testing"));
+        WebElement abTestLink = driver.findElement(By.partialLinkText("A/B"));
         abTestLink.click();
 
         //4- Verify title is: Expected: No A/B Test
