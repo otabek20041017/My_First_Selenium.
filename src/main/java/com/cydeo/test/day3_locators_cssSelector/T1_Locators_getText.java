@@ -31,6 +31,7 @@ public class T1_Locators_getText {
         // Mac: option + enter
         // windows: alt + enter
         WebElement user_password = driver.findElement(By.name("USER_PASSWORD"));
+        user_password.sendKeys("incorrect");
 
         Thread.sleep(3000);
         //5- Click to login button
