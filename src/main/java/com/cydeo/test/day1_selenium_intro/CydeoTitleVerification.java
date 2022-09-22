@@ -1,4 +1,4 @@
-package test.day1_selenium_intro;
+package com.cydeo.test.day1_selenium_intro;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
