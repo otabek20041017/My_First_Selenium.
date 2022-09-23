@@ -30,6 +30,10 @@ public class WebDriverFactory {
         }
     }
 
+    public static void main(String[] args) {
+        getDriver("chrome").get("https://www.google.com");
+    }
+
 }
 
 
