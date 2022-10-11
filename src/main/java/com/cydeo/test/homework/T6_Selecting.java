@@ -45,7 +45,7 @@ public class T6_Selecting {
           System.out.println("Title verification is failed!");
       }
 
-        Assert.assertEquals(expectedResult, actualResult,"Title is true");
+        Assert.assertEquals(expectedResult, actualResult,"Title is false");
         
     }
 

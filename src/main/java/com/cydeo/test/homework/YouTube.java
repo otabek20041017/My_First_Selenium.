@@ -1,40 +1,75 @@
 package com.cydeo.test.homework;
 
 import com.cydeo.utilities.WebDriverFactory;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
 
 public class YouTube {
 
-    public static void main(String[] args) {
+    WebDriver driver;
 
-        WebDriver driver = WebDriverFactory.getDriver("chrome");
+    @BeforeMethod
+    public void setUp() {
+        driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
         driver.get("https://www.youtube.com/");
+        driver.getTitle();
+    }
+
+    @Test
+    public void METHOD() throws InterruptedException {
+
+        Thread.sleep(3000);
+        WebElement searchYtB = driver.findElement(By.xpath("//input[@id='search']"));
+        searchYtB.sendKeys("Eminem");
 
 
-        WebElement search = driver.findElement(By.xpath("/html/body/ytd-app/div[1]/div/ytd-masthead/div[3]/div[2]/ytd-searchbox/form/div[1]/div[1]/input"));
-        search.sendKeys("Eminem" + Keys.ENTER);
+        Thread.sleep(3000);
+        WebElement clickSearchYTBbtn = driver.findElement(By.xpath("//button[@id='search-icon-legacy']"));
+        clickSearchYTBbtn.click();
+
+        Thread.sleep(4000);
+        WebElement clickVideo = driver.findElement(By.xpath("(//*[@class='style-scope ytd-video-renderer'])[1]"));
+        clickVideo.click();
 
 
-        ;
-        WebElement click = driver.findElement(By.xpath("/html/body/ytd-app/div[1]/div/ytd-masthead/div[3]/div[2]/ytd-searchbox/button"));
-        click.click();
+//        String expectedResult = "Eminem - Lose Yourself [HD]";
+        String expectedResult = driver.findElement(By.xpath("(//a[contains(@title,'Eminem - Lose Yourself [HD]')])[1]")).getText();
+        System.out.println(expectedResult);
+
+        String exPectedResult = expectedResult;
+        String actualResult = "Eminem - Lose Yourself[HD]";
+        
 
 
-        WebElement title = driver.findElement(By.id("title-wrapper"));
-        title.click();
 
+
+//        //(//*[@class='style-scope ytd-watch-metadata'])[7]
+//
+        if (exPectedResult.contentEquals(actualResult)) {
+            System.out.println("Text is common with on Youtube");
+        } else {
+            System.out.println("Text is not common with on Youtube");
+        }
+
+        
+        
+
+
+    }
+
+    @AfterMethod
+    public void close() throws Exception {
+
+        Thread.sleep(5000);
         driver.quit();
-
     }
 }

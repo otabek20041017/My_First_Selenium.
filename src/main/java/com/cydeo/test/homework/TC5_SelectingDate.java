@@ -31,8 +31,9 @@ public class TC5_SelectingDate {
 
         Select year = new Select(driver.findElement(By.id("year")));
         year.selectByValue("1923");
-        String expectedResultYear = String.valueOf(year.getFirstSelectedOption().isSelected());
-        String actualResultYear = "";
+
+        year.getAllSelectedOptions();
+
 
         Select month = new Select(driver.findElement(By.xpath("//select[@id='month']")));
         month.selectByValue("11");
@@ -45,5 +46,8 @@ public class TC5_SelectingDate {
 
         Select day = new Select(driver.findElement(By.xpath("//select[@id='day']")));
         day.selectByIndex(0);
+
+
+        
     }
 }
