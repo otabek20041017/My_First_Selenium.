@@ -23,7 +23,7 @@ public class video {
     }
 
     @Test
-    public void youTube() throws Exception{
+    public void youTube() throws Exception {
 
 
         Thread.sleep(3000);
@@ -39,9 +39,7 @@ public class video {
         clickVideo.click();
 
 
-        String expectText = driver.findElement(By.xpath("//span[contains(@id, 'video-title')]")).getText();
+        String expectText = driver.findElement(By.xpath("(//a[contains(@title, 'اجمل اغنية تركية ( لا لا لاااا لا لا ) كاملة مترجمه عربي')])[1]")).getText();
         System.out.println(expectText);
     }
-
-
 }
