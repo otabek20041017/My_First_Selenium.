@@ -31,7 +31,7 @@ public class Amazon {
         Thread.sleep(3000);
         driver.findElement(By.xpath("//input[contains(@id, 'twotabsearchtextbox')]")).sendKeys("Create with strip lights", Keys.ENTER);
         Thread.sleep(3000);
-        driver.findElement(By.xpath("//span[starts-with(text(), 'Philips Hue Gradient LightStrip 75')]")).click();
+        driver.findElement(By.xpath("//*[contains(text(), 'Philips Hue Gradient LightStrip 75')]")).click();
         Thread.sleep(3000);
         String getText = driver.findElement(By.xpath("//*[@id='title']")).getText();
         System.out.println(getText);
