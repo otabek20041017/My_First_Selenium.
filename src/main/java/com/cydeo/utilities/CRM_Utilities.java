@@ -10,41 +10,26 @@ public class CRM_Utilities {
     //* Name: login_crm()
     //* Return type: void
     //* Arg1: WebDriver driver
-    public static void login_crm(WebDriver driver) {
-        //3. Enter valid username //h4
-        WebElement inputUsername = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
-        inputUsername.sendKeys("hr2@cydeo.com");
+    public static void login_crm(WebDriver driver){
 
-        //4. Enter valid password // UserUser
-        WebElement inputPassword = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
-        inputPassword.sendKeys("UserUser");
+        WebElement login = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
+        login.sendKeys("hr@cydeo.com");
+        WebElement pass = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
+        pass.sendKeys("UserUser");
 
-        //5. Click to Log In button
-        WebElement loginBtn = driver.findElement(By.xpath("//input[@class='login-btn']"));
-        loginBtn.click();
-
-
+        WebElement logButton = driver.findElement(By.xpath("//input[@type='submit']"));
+        logButton.click();
     }
 
-    //Method #2 info:
-    //* Name: login_crm()
-    //* Return type: void
-    //* Arg1: WebDriver
-    //* Arg2: String username
-    //* Arg3: String password
-    public static void login_crm(WebDriver driver, String username, String passoword) {
-        //3. Enter valid username //h4
-        WebElement inputUsername = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
-        inputUsername.sendKeys(username);
+    public static void login_crm(WebDriver driver, String username, String password){
 
-        //4. Enter valid password // UserUser
-        WebElement inputPassword = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
-        inputPassword.sendKeys(passoword);
+        WebElement login = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
+        login.sendKeys(username);
+        WebElement pass = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
+        pass.sendKeys(password);
 
-        //5. Click to Log In button
-        WebElement loginBtn = driver.findElement(By.xpath("//input[@class='login-btn']"));
-        loginBtn.click();
-
+        WebElement logButton = driver.findElement(By.xpath("//input[@type='submit']"));
+        logButton.click();
 
     }
 
