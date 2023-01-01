@@ -27,7 +27,7 @@ public class dell {
         driver.findElement(By.xpath("//h3[text()='Computers, Monitors & Technology Solutions | Dell USA']")).click();
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        for (int i = 0; i < 3000; i += 7) {
+        for (int i = 0; i < 5000; i += 7) {
             js.executeScript("window.scrollTo(0, " + i + ")");
 
 

@@ -1,6 +1,5 @@
 package com.cydeo.test.day12_actiona_javascriptexecutor;
 
-import com.beust.ah.A;
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

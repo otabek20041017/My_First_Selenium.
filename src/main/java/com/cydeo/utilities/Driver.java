@@ -26,31 +26,31 @@ public class Driver {
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
                     driver.manage().window().maximize();
-                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
                     driver.manage().window().maximize();
-                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
                 case "safari":
                     WebDriverManager.safaridriver().setup();
                     driver = new SafariDriver();
                     driver.manage().window().maximize();
-                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
                 case "explorer":
                     WebDriverManager.iedriver().setup();
                     driver = new InternetExplorerDriver();
                     driver.manage().window().maximize();
-                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
                 case "opera":
                     WebDriverManager.operadriver().setup();
                     driver = new OperaDriver();
                     driver.manage().window().maximize();
-                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                     break;
             }
         }return driver;
